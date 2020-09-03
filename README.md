@@ -13,6 +13,8 @@ https://linuxhint.com/linux_graphical_windows_x11_forwarding/
 
 C:\Program Files(x86)\VMware\VMware Workstation\vmrun.exe -T ws start C:\path\to\vmguest\file.vmx nogui
 
+- Install putty or mobaxterm and setup X11 forwarding and SSH in.
+
 ```
 
 On Linux Desktop(Your Host):
@@ -77,4 +79,4 @@ Spawn desired GUI on your host:
 ssh -X user@ipaddr
 ```
 
-## Done! Run any gui apps on your linux host from your vm.
+## Done! Run any gui apps on your host from your VM.
