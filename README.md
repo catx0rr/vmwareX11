@@ -37,7 +37,7 @@ On Debian distros:
 ```
 # cat << EOF >> /etc/network/interfaces
 
-auto eth0
+auto <interface>
 iface <interface> inet static
 address X.X.X.X
 netmask X.X.X.X
