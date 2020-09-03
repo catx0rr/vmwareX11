@@ -1,7 +1,21 @@
 # vmwareX11
 
-Configure and Autostart VM.
+### Configure and Autostart VM.
 
+On Windows Desktop(Your Host):
+```
+- Instructions here on how to install X Windows Server on Windows:
+
+https://linuxhint.com/linux_graphical_windows_x11_forwarding/
+
+- Create a startup script to execute the command and run the 
+  desired vm on background on boot.
+
+C:\Program Files(x86)\VMware\VMware Workstation\vmrun.exe -T ws start C:\path\to\vmguest\file.vmx nogui
+
+```
+
+On Linux Desktop(Your Host):
 ```
 cp vmautostart.desktop ~/.config/autostart
 ```
