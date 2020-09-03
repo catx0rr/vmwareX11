@@ -6,7 +6,9 @@ Configure and Autostart VM.
 cp vmautostart.desktop ~/.config/autostart
 ```
 
-set static IP
+### Set static IP
+
+On RPM distros:
 ```
 nmcli con mod <interface> connection.autoconnect yes \
 ipv4.addresses X.X.X.X/X \
@@ -14,16 +16,37 @@ ipv4.gateway X.X.X.X \
 ipv4.dns 8.8.8.8,8.8.4.4 \
 ipv4.method manual
 nmcli con down <interface> ; nmcli con up <interface>
+systemctl restart NetworkManager
 ```
 
-Setup X11 forwarding
+On Debian distros:
+```
+# cat << EOF >> /etc/network/interfaces
 
-On CentOS/Rhel/Fedora:
+auto eth0
+iface <interface> inet static
+address X.X.X.X
+netmask X.X.X.X
+network X.X.X.0
+broadcast X.X.X.255
+gateway X.X.X.X
+EOF
+```
+```
+# echo "nameservers 8.8.8.8
+nameservers 8.8.4.4" > /etc/resolv.conf
+
+# /etc/init.d/networking restart
+```
+
+### Setup X11 forwarding
+
+On RPM distros:
 ```
 sudo dnf install -y xorg-x11-xauth
 ```
 
-On Debian/Ubuntu:
+On Debian distros:
 ```
 sudo apt install -y xauth
 ```
