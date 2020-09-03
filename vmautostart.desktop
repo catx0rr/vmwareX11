@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=VMWARE
+GenericName=hypervisor
+Comment=automation
+Icon=gnome-info
+Exec=vmrun -T ws start /path/to/vmfile.vmx nogui # Run guest as background
+Terminal=False
+Type=Application
+Categories=Utility;
+
+# This setting is for GNOME DE, but even without this it should work.
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=0
