@@ -16,6 +16,23 @@ C:\Program Files(x86)\VMware\VMware Workstation\vmrun.exe -T ws start C:\path\to
 - Install putty or mobaxterm and setup X11 forwarding and SSH in.
 
 ```
+Windows 10 and WSL, XLaunch
+```
+- Install XLaunch X11 Server
+
+https://linuxhint.com/linux_graphical_windows_x11_forwarding/
+
+- Create a startup script to execute using powershell to run the desired vm on background on boot
+
+Invoke-Expression -Command "& 'C:\Program Files (x86)\VMware\VMware Workstation\vmrun.exe' -T ws start C:\path\to\vmguest\file.vmx nogui"
+
+- Ensure XLaunch Program runs on start for efficiency
+- On WSL, create Display on your .bashrc profile
+
+echo "export DISPLAY=localhost:0" >> ~/.bashrc
+
+RUN: ssh -X user@ipaddr 
+```
 
 On Linux Desktop(Your Host):
 ```
